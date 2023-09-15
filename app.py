@@ -7,9 +7,9 @@ model = pickle.load(open('diabetes_LR.sav', 'rb'))
 
 app = Flask(__name__)
 
-@app.route('/')
-def man():
-    return render_template('base.html')
+#@app.route('/')
+#def man():
+    #return render_template('base.html')
 
 @app.route('/predict', methods=['POST'])
 def home():
