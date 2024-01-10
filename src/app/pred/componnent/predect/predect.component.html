@@ -1,0 +1,51 @@
+
+  
+  <div class="main my-5">
+
+
+      <div class="signup p-1" >
+      
+          <form *ngIf="!loading" (ngSubmit)="predict(formData)" #predictionForm="ngForm" >
+              <div class="inputForm1">
+                <div class="col-md-6">
+                  <input  type="number" id="age" name="age"  placeholder="Age" [(ngModel)]="formData.age" required class="form-control">
+                  <input type="number" id="hypertension" name="hypertension"  placeholder="hypertension" [(ngModel)]="formData.hypertension" required class="form-control" >
+                  <input type="number" id="heart_disease" name="heart_disease"  placeholder="heart_disease" [(ngModel)]="formData.heart_disease" required class="form-control">
+                  <input type="number" id="bmi" name="bmi"  placeholder="bmi" [(ngModel)]="formData.bmi" required class="form-control">
+
+                </div>
+                <div class="col-md-4">
+                  <input type="number" id="HbA1c_level" name="HbA1c_level"  placeholder="HbA1c_level" [(ngModel)]="formData.HbA1c_level" required class="form-control">
+                  <input type="number" id="blood_glucose_level" name="blood_glucose_level"  placeholder="blood_glucose_level" [(ngModel)]="formData.blood_glucose_level" required class="form-control">
+                  <select id="smoking_history_num" name="smoking_history_num" [(ngModel)]="formData.smoking_history_num" class="form-select">
+                    <option value=-1>No Info</option>
+                    <option value=0>never</option>
+                    <option value=1>former</option>
+                    <option value=2>current</option>
+                    <option value=3>ever</option>
+                  </select>
+                  <button type="submit">Predict</button>
+                </div>              
+
+               
+
+              </div>
+
+              
+
+              </form>
+            
+
+
+    </div>
+    <div *ngIf="loading && prediction !== null" class="prediction-container">
+      <ng-container *ngIf="isDiabetes(); else noDiabetesTemplate" class="diabetes-text">
+        <p>Prediction:<h3 class="text-black my-4" > Diabetes</h3>
+      </ng-container>
+      <ng-template #noDiabetesTemplate class="no-diabetes-text">
+        <p>Prediction: <h3 class="text-white my-4" > No Diabetes</h3>
+      </ng-template>
+    </div>
+<button (click)="returnToHome()" *ngIf="loading">Return to Home</button>
+</div>
+

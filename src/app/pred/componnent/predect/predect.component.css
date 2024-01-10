@@ -1,0 +1,35 @@
+.inputForm1{
+    width: 50%;
+	height: 20px;
+	margin: 5px auto;
+	display:flex;
+	margin-bottom: 80px;
+	
+}
+.myForm{
+align-items: center;
+justify-content: center;
+}
+/* Add this CSS to your component's CSS file or styles.css */
+
+/* Style for the main container */
+.prediction-container {
+    text-align: center; /* Center text horizontally */
+    background-color: #3b8cd8; /* Background color */
+    padding: 20px; /* Padding around the content */
+    border: 1px solid #0a2efa; /* Border for the container */
+    border-radius: 5px; /* Rounded corners */
+    margin: 10px 0; /* Margin top and bottom */
+  }
+  
+  /* Style for the "Diabetes" text */
+  .diabetes-text {
+    color: #ff0000; /* Red color for "Diabetes" */
+    font-weight: bold; /* Bold text */
+  }
+  
+  /* Style for the "No diabetes" text */
+  .no-diabetes-text {
+    color: #00aa00; /* Green color for "No diabetes" */
+    font-weight: bold; /* Bold text */
+  }
